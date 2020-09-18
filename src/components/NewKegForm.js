@@ -1,3 +1,4 @@
+  
 import React from 'react';
 import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
@@ -12,7 +13,7 @@ function NewKegForm(props){
       brand: event.target.brand.value,
       price: event.target.price.value,
       alcoholContent: event.target.alcoholContent.value,
-      kegSize: event.target.alcoholContent.value,
+      kegSize: 124,
       id: v4()
     });
   }
