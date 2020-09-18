@@ -9,6 +9,7 @@ describe('kegListReducer', () => {
     brand: 'Level Beer',
     price: '5.00',
     alcoholContent: '5',
+    kegSize: 124,
     id: 1
   }
 
@@ -18,6 +19,7 @@ describe('kegListReducer', () => {
     brand: 'Level Beer',
     price: '5.00',
     alcoholContent: '5',
+    kegSize: '124',
     id: 1 
     },
     2: {
@@ -25,6 +27,7 @@ describe('kegListReducer', () => {
     brand: 'Budweiser',
     price: '3.00',
     alcoholContent: '3',
+    kegSize: '124',
     id: 2 
     }
   }
@@ -34,13 +37,14 @@ describe('kegListReducer', () => {
   });
 
   test ('Should successfully add new keg data to masterKegList', () => {
-    const { name, brand, price, alcoholContent, id } = kegData;
+    const { name, brand, price, alcoholContent, kegSize, id } = kegData;
     action = {
       type: 'ADD_KEG',
       name: name,
       brand: brand,
       price: price,
       alcoholContent: alcoholContent,
+      kegSize: kegSize,
       id: id
     };
     expect (kegListReducer({}, action)).toEqual({
@@ -49,6 +53,7 @@ describe('kegListReducer', () => {
         brand: brand,
         price: price,
         alcoholContent: alcoholContent,
+        kegSize: kegSize,
         id: id
       }
     });
@@ -65,19 +70,21 @@ describe('kegListReducer', () => {
       brand: 'Budweiser',
       price: '3.00',
       alcoholContent: '3',
+      kegSize: '124',
       id: 2 
       }
     });
   });
 
   test('Should successfully update a keg', () => {
-    const { name, brand, price, alcoholContent, id } = kegData;
+    const { name, brand, price, alcoholContent, kegSize, id } = kegData;
     action = {
       type: 'ADD_KEG',
       name: name,
       brand: brand,
       price: price,
       alcoholContent: alcoholContent,
+      kegSize: kegSize,
       id: id
     }
 
@@ -89,6 +96,7 @@ describe('kegListReducer', () => {
       brand: 'Zoiglhaus',
       price: '4.00',
       alcoholContent: '4',
+      kegSize: '124',
       id: 1
     }
     expect(kegListReducer(stateToUpdate, updateAction)).toEqual({
@@ -97,16 +105,10 @@ describe('kegListReducer', () => {
         brand: 'Zoiglhaus',
         price: '4.00',
         alcoholContent: '4',
+        kegSize: '124',
         id: 1
       }
     });
   });
 });
 
-
-// name: PropTypes.string,
-// brand: PropTypes.string,
-// price: PropTypes.number,
-// alcoholContent: PropTypes.number,
-// kegSize: PropTypes.number,
-// id: PropTypes.string,

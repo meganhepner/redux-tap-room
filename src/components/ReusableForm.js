@@ -25,6 +25,11 @@ function ReusableForm(props){
           name='alcoholContent'
           defaultValue={props.defaultAlcoholContent}
           placeholder='ABV' />
+        <input
+          type='number'
+          name='kegSize'
+          defaultValue={props.defaultkegSize}
+          placeholder='Pints in Keg' />
         <button type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>
@@ -37,7 +42,8 @@ ReusableForm.propTypes = {
   defaultName: PropTypes.string,
   defaultBrand: PropTypes.string,
   defaultPrice: PropTypes.number,
-  defaultAlcoholContent: PropTypes.number
+  defaultAlcoholContent: PropTypes.number,
+  defaultkegSize: PropTypes.number
 };
 
 export default ReusableForm;

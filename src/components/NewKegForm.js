@@ -12,7 +12,7 @@ function NewKegForm(props){
       brand: event.target.brand.value,
       price: event.target.price.value,
       alcoholContent: event.target.alcoholContent.value,
-      kegSize: 124,
+      kegSize: event.target.alcoholContent.value,
       id: v4()
     });
   }

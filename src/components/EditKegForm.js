@@ -12,7 +12,7 @@ function EditKegForm (props) {
             brand: event.target.brand.value,
             price: event.target.price.value,
             alcoholContent: event.target.alcoholContent.value,
-            kegSize: keg.kegSize,
+            kegSize: event.target.kegSize.value,
             id: keg.id
         });
     }
@@ -25,6 +25,7 @@ function EditKegForm (props) {
                 defaultBrand={keg.brand}
                 defaultPrice={keg.price}
                 defaultAlcoholContent={keg.alcoholContent}
+                defaultKegSize={keg.kegSize}
             />
         </React.Fragment>
         
