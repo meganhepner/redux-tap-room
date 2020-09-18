@@ -49,7 +49,7 @@ class KegControl extends React.Component {
     const { name, brand, price, alcoholContent, kegSize, id } = selectedKeg;
     const action = {
       type: 'SELECT_KEG',
-      id: selectedKeg.id
+      id: selectedKeg
     }
     dispatch(action);
   }
