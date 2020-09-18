@@ -21,11 +21,11 @@ function EditKegForm (props) {
             <ReusableForm
                 formSubmissionHandler={handleEditKegFormSubmission}
                 buttonText="Update Keg" 
-                defaultName={keg.name}
-                defaultBrand={keg.brand}
-                defaultPrice={keg.price}
-                defaultAlcoholContent={keg.alcoholContent}
-                defaultKegSize={keg.kegSize}
+                // defaultName={keg.name}
+                // defaultBrand={keg.brand}
+                // defaultPrice={keg.price}
+                // defaultAlcoholContent={keg.alcoholContent}
+                // defaultKegSize={keg.kegSize}
             />
         </React.Fragment>
         
