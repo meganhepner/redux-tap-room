@@ -12,6 +12,19 @@ describe('kegListReducer', () => {
     id: 1
   }
 
+  const currentState = {
+    1: { name: 'Level Up Pils',
+    brand: 'Level Beer',
+    price: '5.00',
+    alcoholContent: '5',
+    id: 1 },
+    2: { name: 'Lite',
+    brand: 'Budweiser',
+    price: '3.00',
+    alcoholContent: '3',
+    id: 2 }
+  }
+
   test('Should return default state if there is no action type passed into the reducer', () => {
     expect(kegListReducer({}, { type: null})).toEqual({});
   });
@@ -35,8 +48,22 @@ describe('kegListReducer', () => {
         id: id
       }
     });
-  })
+  });
 
+  test('Should successfully delete a keg', () => {
+    action = {
+      type: 'DELETE_KEG',
+      id: 1
+    };
+    expect(kegListReducer(currentState, action)).toEqual({
+      2: { name: 'Lite',
+      brand: 'Budweiser',
+      price: '3.00',
+      alcoholContent: '3',
+      id: 2 }
+    });
+  });
+  
 });
 
 // name: PropTypes.string,
