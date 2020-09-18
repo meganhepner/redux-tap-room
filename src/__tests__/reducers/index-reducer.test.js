@@ -3,7 +3,7 @@ import { createStore } from 'redux';
 import formVisibleReducer from '../../reducers/form-visible-reducer';
 import kegListReducer from '../../reducers/keg-list-reducer';
 import editKegReducer from '../../reducers/edit-keg-reducer';
-
+import selectedKegReducer from '../../reducers/selected-keg-reducer';
 
 let store = createStore(rootReducer);
 
@@ -21,10 +21,15 @@ describe("rootReducer", () => {
     expect(store.getState().editing).toEqual(editKegReducer(undefined, { type: null }));
   });
 
+  test('Check that initial state of selectedKegReducer matches root reducer', () => {
+    expect(store.getState().selectedKeg).toEqual(selectedKegReducer(undefined, { type: null }));
+  });
+
   test('Should return default state if no action type is recognized', () => {
     expect(rootReducer({}, { type: null })).toEqual({
       masterKegList: {},
       formVisibleOnPage: false,
+      selectedKeg: null,
       editing: false
     });
   });
@@ -49,6 +54,14 @@ describe("rootReducer", () => {
     }
     store.dispatch(action);
     expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, action));
+  });
+
+  test('Check that initial state of editKegReducer matches root reducer', () => {
+    const action = {
+      type: 'TOGGLE_EDIT'
+    }
+    store.dispatch(action);
+    expect(store.getState().editing).toEqual(editKegReducer(undefined, action));
   });
 
 });
