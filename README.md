@@ -1,10 +1,10 @@
-# <h1 align = "center"> Tap Room
+# <h1 align = "center"> Redux Tap Room
 
-## <h3 align = "center"> Intro To React
+## <h3 align = "center"> Intro To React & Redux
 
 ## <h2 align = "center"> About
 
-<p align = "center"> This is an application for a tap room. The user can view a list of the kegs available in the tap room, add new kegs, and track the amount avaiable in each keg as pints are sold. One page React app.
+<p align = "center"> This is an application for a tap room. The user can view a list of the kegs available in the tap room, add new kegs, and track the amount avaiable in each keg as pints are sold. One page React app with Redux.
 
 ## **✅REQUIREMENTS**
 * Install [Git v2.62.2+](https://git-scm.com/downloads/)
@@ -36,6 +36,7 @@ Contact : Megan Hepner
 * WebPack
 * JavaScript
 * React
+* Redux
 
 ## **📘 License**
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
