@@ -27,7 +27,7 @@ describe("selectedKegReducer", () => {
     expect(selectedKegReducer({}, { type: null})).toEqual({});
   });
 
-  test('Should successfully select a keg', () => {
+  test('Should successfully return selected keg', () => {
     action = {
       type: 'SELECT_KEG',
       id: 2

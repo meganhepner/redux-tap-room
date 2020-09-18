@@ -11,7 +11,7 @@ class KegControl extends React.Component {
     constructor(props) {
       super(props);
       this.state = { selectedKeg: null };
-    }
+    } 
 
     handleClick = () => {
       if(this.state.selectedKeg != null){
