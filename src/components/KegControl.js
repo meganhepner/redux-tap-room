@@ -10,30 +10,32 @@ class KegControl extends React.Component {
 
     constructor(props) {
       super(props);
-      this.state = {
-        selectedKeg: null,
-        editing: false
-      };
+      this.state = { selectedKeg: null };
     }
 
     handleClick = () => {
       if(this.state.selectedKeg != null){
-        this.setState({
-          formVisibleOnPage: false,
-          selectedKeg: null,
-          editing: false
-        });
+        this.setState({ selectedKeg: null });
       } else {
         const { dispatch } = this.props;
         const action = {
           type: 'TOGGLE_FORM'
         }
         dispatch(action);
+        const action2 = {
+          type: 'TOGGLE_EDIT'
+        }
+        dispatch(action2);
       }
     }
 
     handleEditClick = () => {
-      this.setState({editing: true});
+      // this.setState({editing: true});
+      const { dispatch } = this.props;
+      const action = {
+        type: 'TOGGLE_EDIT'
+      }
+      dispatch(action);
     }
 
     handleAddingNewKegToList = (newKeg) => {
@@ -73,10 +75,11 @@ class KegControl extends React.Component {
         kegSize: kegSize
       }
       dispatch(action);
-      this.setState({
-        editing: false,
-        selectedKeg: null
-      });
+      const action2 = {
+        type: 'TOGGLE_EDIT'
+      }
+      dispatch(action2);
+      this.setState({ selectedKeg: null });
     }
 
     handleDeletingKeg = (id) => {
@@ -112,7 +115,7 @@ class KegControl extends React.Component {
       let currentlyVisibleState = null;
       let buttonText = null;
 
-      if(this.state.editing){
+      if(this.props.editing){
         currentlyVisibleState = <EditKegForm 
                                 keg = {this.state.selectedKeg} 
                                 onEditKeg = {this.handleEditingKegInList} />
@@ -147,13 +150,15 @@ class KegControl extends React.Component {
 
 KegControl.propTypes = {
   masterKegList: PropTypes.object,
-  formVisibleOnPage: PropTypes.bool
+  formVisibleOnPage: PropTypes.bool,
+  editing: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
     masterKegList: state.masterKegList,
-    formVisibleOnPage: state.formVisibleOnPage
+    formVisibleOnPage: state.formVisibleOnPage,
+    editing: state.editing,
   }
 }
 
