@@ -32,15 +32,13 @@ describe("selectedKegReducer", () => {
       type: 'SELECT_KEG',
       id: 2
     };
-    expect(selectedKegReducer(currentState, action)).toEqual({
-      2: { 
+    expect(selectedKegReducer(currentState, action)).toEqual({    
       name: 'Lite',
       brand: 'Budweiser',
       price: '3.00',
       alcoholContent: '3',
       kegSize: '124',
       id: 2 
-      }
     });
   });
 });

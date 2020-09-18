@@ -3,8 +3,8 @@ export default (state = false, action) => {
   switch (action.type) {
     case 'SELECT_KEG':
       const newState = { ...state };
-      select newState[id];
-      return newState;
+      const selectedKeg = newState[id];
+      return selectedKeg;
     default:
       return state;
   }
