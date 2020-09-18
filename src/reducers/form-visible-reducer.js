@@ -5,7 +5,6 @@ export default (state = false, action) => {
   default: 
     return state;
   }
-
 };
 
 //step 1 : added 'formVisibleOnPage: state.formVisibleOnPage' to mapStateToProps
